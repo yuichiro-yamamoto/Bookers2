@@ -1,0 +1,16 @@
+<%= render 'books/list', user:@user, book:@book %>
+
+ <h1>Users</h1>
+<table class="table">
+ <tr>
+ <th>image</th>
+ <th>name</th>
+ </tr>
+
+<% @users.each do |users| %>
+ <tr>
+ <td><%= attachment_image_tag users, :profile_image, :fill, 60, 60,class: "img-square pull-left profile-thumb", format: 'jpeg', fallback: "no_image.jpg" %></td>
+ <td><%= link_to users.name, user_path(users.id) %></td>
+ </tr>
+ <% end %>
+</table>

@@ -1,0 +1,11 @@
+<%= form_for(@user)do |f| %>
+<%= render "devise/shared/error_messages", resource: @user %>
+
+
+<h1>User info</h1>
+
+<p>Name <%= f.text_field :name %></p>
+<p>Image <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+<p>Intoroducution <%= f.text_area :introduction %></p>
+<p><%= f.submit "Update User", class: "btn btn-info col-lg-1" %></p>
+<% end %>

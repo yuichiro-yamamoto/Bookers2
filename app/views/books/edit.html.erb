@@ -1,0 +1,16 @@
+<p><%= flash[:message] %></p>
+<%= render "devise/shared/error_messages", resource: @book %>
+<div class = "container"> 
+ <div class = "row">
+  <div class="col-md-6 col-md-offset-3">
+   	<h1>Editing Book</h1>
+   	 <%= form_for(@book) do |c| %>
+   	  <h3>Title</h3>
+     <%= c.text_field :title %>
+     <h4>Opinion</h4>
+     <%= c.text_field :body %>
+     <%= c.submit 'Update Book' %>
+    <% end %>
+  </div>
+ </div>
+</div>
